@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bookstore - Home</title>
+</head>
+<body>
+    <h1>Welcome to Bookstore</h1>
+
+    <!-- Display Featured Books -->
+    <h2>Featured Books</h2>
+    <div th:each="book : ${featuredBooks}">
+        <p th:text="${book.title}"></p>
+    </div>
+
+    <!-- Display New Arrivals -->
+    <h2>New Arrivals</h2>
+    <div th:each="book : ${newArrivals}">
+        <p th:text="${book.title}"></p>
+    </div>
+
+    <!-- Display Promotions -->
+    <h2>Promotional Books</h2>
+    <div th:each="book : ${promotions}">
+        <p th:text="${book.title}"></p>
+    </div>
+</body>
+</html>

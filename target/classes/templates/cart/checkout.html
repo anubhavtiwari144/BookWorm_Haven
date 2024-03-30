@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bookstore - Checkout</title>
+</head>
+<body>
+    <h1>Checkout</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Book</th>
+                <th>Quantity</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="entry : ${cart}">
+                <td th:text="${bookService.getBookById(entry.key).title}"></td>
+                <td th:text="${entry.value}"></td>
+            </tr>
+        </tbody>
+    </table>
+    
+    <p th:text="'Total Price: $' + ${totalPrice}"></p>
+
+    <!-- Additional checkout information and form can be added here -->
+
+    <a href="/">Continue Shopping</a>
+</body>
+</html>
+		
